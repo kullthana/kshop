@@ -10,7 +10,6 @@ import { setKey } from '../reducer/NavReducer'
 import NotebookListsPage from '../pages/NotebookListsPage'
 import NotebookDetailPage from '../pages/NotebookDetailsPage'
 import CartPage from '../pages/CartPage'
-import logo from '../image/newlogo.png'
 import {
   SearchOutlined,
   HomeOutlined,
