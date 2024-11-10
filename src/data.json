@@ -1,0 +1,149 @@
+{
+  "carts": [],
+  "products": [
+    {
+      "id": "1",
+      "name": "ASUS ROG Strix G15",
+      "price": 24990,
+      "stock": 10,
+      "detail": "Equipped with a powerful AMD Ryzen 7 processor and an RTX 3060, the ASUS ROG Strix G15 is ideal for high-performance gaming and multitasking. With adaptive sync technology, it delivers a smooth and immersive gaming experience.",
+      "CPU": "AMD Ryzen 7 5800H",
+      "Graphics": "NVIDIA GeForce RTX 3060",
+      "RAM": "16GB DDR4",
+      "SSD": "512GB",
+      "image": "https://www.amdthailand.com/wp-content/uploads/2021/04/Asus-Notebook-ROG-Strix-G15-GL543QR-HF126T-Grey-3-1613150808.jpg"
+    },
+    {
+      "id": "2",
+      "name": "MSI GE76 Raider",
+      "price": 65990,
+      "stock": 5,
+      "detail": "The MSI GE76 Raider offers top-notch gaming performance with an Intel i9 processor and RTX 3080 graphics. Perfect for gamers who need speed, power, and stunning visuals on a 17.3-inch display.",
+      "CPU": "Intel Core i9-11980HK",
+      "Graphics": "NVIDIA GeForce RTX 3080",
+      "RAM": "32GB DDR4",
+      "SSD": "1TB",
+      "image": "https://www.jib.co.th/img_master/product/original/2021081314380848049_1.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Dell Alienware m15",
+      "price": 54990,
+      "stock": 7,
+      "detail": "A sleek and portable gaming powerhouse, the Alienware m15 features a 15.6-inch display, RTX 3070 graphics, and advanced cooling technology for high-performance gaming on the go.",
+      "CPU": "Intel Core i7-11800H",
+      "Graphics": "NVIDIA GeForce RTX 3070",
+      "RAM": "16GB DDR4",
+      "SSD": "512GB",
+      "image": "https://media-cdn.bnn.in.th/105545/Dell-Notebook-Alienware-M15-R3-W56911001THW10-Black-2-square_medium.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Razer Blade 15 Advanced",
+      "price": 55990,
+      "stock": 8,
+      "detail": "The Razer Blade 15 combines a thin and lightweight design with powerful gaming specs, including an Intel i7 processor and RTX 3070. It’s perfect for gamers who want style without compromising performance.",
+      "CPU": "Intel Core i7-10875H",
+      "Graphics": "NVIDIA GeForce RTX 3070",
+      "RAM": "16GB DDR4",
+      "SSD": "1TB",
+      "image": "https://media.lifeinformatica.com/cdn-cgi/image/sharpen=0.5,f=auto/contents/Life/RAZER-RZ09-0367B1C3-R311/imgs/RZ09-0367B1C3-R311-01.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Acer Predator Helios 300",
+      "price": 38990,
+      "stock": 12,
+      "detail": "The Acer Predator Helios 300 is a budget-friendly choice for gaming with excellent features like an Intel i7 processor, RTX 3060 graphics, and a 144Hz refresh rate for fluid gameplay.",
+      "CPU": "Intel Core i7-11800H",
+      "Graphics": "NVIDIA GeForce RTX 3060",
+      "RAM": "16GB DDR4",
+      "SSD": "512GB",
+      "image": "https://www.jib.co.th/img_master/product/original/20220708094044_53829_352_1.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Gigabyte AORUS 15G",
+      "price": 45990,
+      "stock": 6,
+      "detail": "Designed for competitive gamers, the Gigabyte AORUS 15G offers a 240Hz display, Intel i7 processor, and RTX 3070 graphics, making it ideal for high-speed gaming with crystal-clear visuals.",
+      "CPU": "Intel Core i7-10870H",
+      "Graphics": "NVIDIA GeForce RTX 3070",
+      "RAM": "16GB DDR4",
+      "SSD": "512GB",
+      "image": "https://www.kabifperu.com/imagenes/prod-22022021110453-notebook-gigabyte-aorus-15g-wb-15-6-lcd-fhd-core-i7-10875h-2-3ghz-16gb-ddr4-512gb-ssd-m-2-deta.png"
+    },
+    {
+      "id": "7",
+      "name": "HP Omen 15",
+      "price": 42990,
+      "stock": 9,
+      "detail": "The HP Omen 15 combines powerful AMD Ryzen 7 processing with GTX 1660 Ti graphics, providing a balanced and affordable gaming experience for both casual and competitive players.",
+      "CPU": "AMD Ryzen 7 4800H",
+      "Graphics": "NVIDIA GeForce GTX 1660 Ti",
+      "RAM": "16GB DDR4",
+      "SSD": "512GB",
+      "image": "https://www.jib.co.th/img_master/product/original/20180910085734_30354_24_1.png"
+    },
+    {
+      "id": "8",
+      "name": "Lenovo Legion 5 Pro",
+      "price": 47990,
+      "stock": 11,
+      "detail": "The Lenovo Legion 5 Pro is built for immersive gaming with its AMD Ryzen 9 processor and RTX 3070 graphics, complemented by a QHD 16:10 display for sharp visuals and expanded screen space.",
+      "CPU": "AMD Ryzen 9 5900H",
+      "Graphics": "NVIDIA GeForce RTX 3070",
+      "RAM": "16GB DDR4",
+      "SSD": "512GB",
+      "image": "https://speedcom.co.th/cdn/shop/files/Legion_Pro_5_16IRX9_CT1_03.jpg?v=1729501924"
+    },
+    {
+      "id": "9",
+      "name": "Acer Nitro 5",
+      "price": 28990,
+      "stock": 15,
+      "detail": "A cost-effective choice for casual gamers, the Acer Nitro 5 comes with an Intel i5 processor and GTX 1650 graphics, delivering solid performance and value at an entry-level price.",
+      "CPU": "Intel Core i5-11400H",
+      "Graphics": "NVIDIA GeForce GTX 1650",
+      "RAM": "8GB DDR4",
+      "SSD": "512GB",
+      "image": "https://speedcom.co.th/cdn/shop/files/acer-nitro-5-an515-47-r5p1-ryzen-7-obsidian-black-speedcom-2_700x700.jpg?v=1724641615"
+    },
+    {
+      "id": "10",
+      "name": "Asus TUF Gaming F15",
+      "price": 36990,
+      "stock": 5,
+      "detail": "Built to withstand the rigors of gaming, the Asus TUF Gaming F15 features military-grade durability, an Intel i7 processor, and RTX 3060 graphics, making it ideal for gamers on the move.",
+      "CPU": "Intel Core i7-11800H",
+      "Graphics": "NVIDIA GeForce RTX 3060",
+      "RAM": "16GB DDR4",
+      "SSD": "512GB",
+      "image": "https://speedcom.co.th/cdn/shop/files/asus-tuf-gaming-f15-fx507vv-lp147w-i7-gen13-mecha-gray-speedcom-3_700x700.webp?v=1722866677"
+    },
+    {
+      "id": "11",
+      "name": "MSI GL65 Leopard",
+      "price": 31990,
+      "stock": 4,
+      "detail": "MSI GL65 Leopard is a reliable gaming laptop with Intel i7 processing power and GTX 1660 Ti graphics, delivering a solid gaming experience at a reasonable price point.",
+      "CPU": "Intel Core i7-10750H",
+      "Graphics": "NVIDIA GeForce GTX 1660 Ti",
+      "RAM": "16GB DDR4",
+      "SSD": "512GB",
+      "image": "https://www.jib.co.th/img_master/product/original/20201021140707_43197_287_1.jpg"
+    },
+    {
+      "id": "12",
+      "name": "Alienware X17",
+      "price": 74990,
+      "stock": 3,
+      "detail": "A premium gaming laptop from Alienware, the X17 boasts a 17-inch display, Intel i9 processor, and RTX 3080 graphics, engineered for high-end gamers who seek the best in performance and design.",
+      "CPU": "Intel Core i9-11980HK",
+      "Graphics": "NVIDIA GeForce RTX 3080",
+      "RAM": "32GB DDR4",
+      "SSD": "1TB",
+      "image": "https://www.gsmpro.cl/cdn/shop/files/dell-alienware-x17-r2-laptop-para-juegos-intel-core-i9-12900hk-32-16-gb-ram-gris-2_3c5e783e-2250-4b28-bec3-46e8cdd6e906.jpg?v=1718213574&width=1497"
+    }
+  ]
+}
