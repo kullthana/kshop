@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Layout, Menu, Row, Badge } from 'antd'
 import { useNavigate, Routes, Route } from 'react-router-dom'
 import Homepage from '../pages/Homepage'
@@ -19,11 +19,23 @@ const NavBar = (props) => {
   const { cartData } = props.cartData
   const selKey = useSelector((state) => state.toggle.key)
   const dispatch = useDispatch()
+  const [show, setShow] = useState(false)
 
   const navigate = useNavigate()
 
   useEffect(() => {
     fetchCartData()
+    setTimeout(() => {
+      if (cartData.length > 0) {
+        setShow(true)
+      }
+    }, 1000)
+  }, [])
+
+  useEffect(() => {
+    if (cartData.length > 0) {
+      setShow(true)
+    }
   }, [])
 
   const handleSelect = (key) => {
@@ -77,7 +89,7 @@ const NavBar = (props) => {
           </Menu.Item>
 
           <Menu.Item key="3">
-            <Badge count={cartData.length}>
+            <Badge dot={show}>
               <ShoppingCartOutlined style={{ fontSize: '18px' }} />
             </Badge>
           </Menu.Item>

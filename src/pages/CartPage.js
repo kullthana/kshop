@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Layout, List, Typography, InputNumber, Space, Spin } from 'antd'
+import { Layout, List, Typography, InputNumber, Space, Spin, Button } from 'antd'
 import { connect } from 'react-redux'
 import { fetchData } from '../actions/ActionsHome'
 import { fetchCartData } from '../actions/CartAction'
@@ -24,8 +24,8 @@ const CartPage = (props) => {
     cartListData()
   }, [])
 
-  const onChangeNumber = (value) => {
-    onUpdateNumber(product, value)
+  const onChangeNumber = (item) => (value) => {
+    onUpdateNumber(item, value)
   }
 
   const onUpdateNumber = (value, num) => {
@@ -86,8 +86,7 @@ const CartPage = (props) => {
                     min={0}
                     max={item.stock}
                     defaultValue={item.quantity}
-                    onChange={onChangeNumber}
-                    onClick={SetProduct(item)}
+                    onChange={onChangeNumber(item)}
                   />
                   {}
                   <Text type="secondary">{item.stock} Stock</Text>
@@ -111,6 +110,10 @@ const CartPage = (props) => {
             </List.Item>
           )}
         />
+
+        <Button type="primary" style={{ marginTop: '1rem', width: '5rem', alignSelf: 'center' }}>
+          Checkout
+        </Button>
       </Layout>
     </Spin>
   )

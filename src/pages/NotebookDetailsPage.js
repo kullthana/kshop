@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Layout, Row, Col, Typography, InputNumber, Space, Button, Spin, Carousel } from 'antd'
+import { Layout, Row, Col, Typography, InputNumber, Space, Button, Spin } from 'antd'
 import { connect } from 'react-redux'
 import { fetchData } from '../reducer/NotebookReducer'
 import { bindActionCreators } from 'redux'
@@ -9,7 +9,7 @@ import { fetchCartData } from '../actions/CartAction'
 
 const NotebookDetailPage = (props) => {
   const { fetchData, SubmitAction, fetchCartData, SubmitUpdateAction, loading } = props
-  const { loadingDetail, data } = props.data
+  const { data } = props.data
   const { id } = useParams()
   const { Title, Text, Paragraph } = Typography
   const { cartData } = props.cartData

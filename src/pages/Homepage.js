@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Card, Row, Col, Typography, Carousel, Spin } from 'antd'
+import { Card, Row, Col, Typography, Spin } from 'antd'
 import '../App.css'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
