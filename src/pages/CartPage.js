@@ -4,16 +4,16 @@ import { connect } from 'react-redux'
 import { fetchData } from '../actions/ActionsHome'
 import { fetchCartData } from '../actions/CartAction'
 import { bindActionCreators } from 'redux'
-import { SubmitAction, SubmitUpdateAction } from '../actions/NotebookActions'
+import { SubmitAction, SubmitUpdateAction, SubmitRemoveAction } from '../actions/NotebookActions'
 import { useNavigate } from 'react-router-dom'
 
 const CartPage = (props) => {
-  const { fetchData, fetchCartData, SubmitUpdateAction, loading } = props
+  const { fetchData, fetchCartData, SubmitUpdateAction, SubmitRemoveAction, loading } = props
   const { data } = props.data
   const { cartData } = props.cartData
-  const { Text, Paragraph } = Typography
-  const [number, SetNumber] = useState()
+  const { Text } = Typography
   const [cartLists, SetCartLists] = useState()
+  const [product, SetProduct] = useState()
   const dataCart = []
 
   const navigate = useNavigate()
@@ -25,12 +25,27 @@ const CartPage = (props) => {
   }, [])
 
   const onChangeNumber = (value) => {
-    SetNumber(value)
+    onUpdateNumber(product, value)
   }
 
-  const onUpdateNumber = (value) => {
-    value.quantity = number
-    SubmitUpdateAction(value)
+  const onUpdateNumber = (value, num) => {
+    for (var item of cartData) {
+      if (item.product_id === value.id) {
+        item.quantity = num
+        if (item.quantity === 0) {
+          SubmitRemoveAction(item)
+          refreshPage()
+        } else {
+          SubmitUpdateAction(item)
+        }
+      }
+    }
+  }
+
+  const refreshPage = () => {
+    if (!window.location.hash) {
+      window.location.reload()
+    }
   }
 
   const cartListData = () => {
@@ -59,7 +74,7 @@ const CartPage = (props) => {
             onChange: (page) => {
               console.log(page)
             },
-            pageSize: 4
+            pageSize: 5
           }}
           dataSource={cartLists}
           renderItem={(item) => (
@@ -68,46 +83,31 @@ const CartPage = (props) => {
               actions={[
                 <Space wrap>
                   <InputNumber
-                    min={1}
+                    min={0}
                     max={item.stock}
                     defaultValue={item.quantity}
                     onChange={onChangeNumber}
+                    onClick={SetProduct(item)}
                   />
+                  {}
                   <Text type="secondary">{item.stock} Stock</Text>
                 </Space>
               ]}
               extra={
                 <img
-                  width={272}
+                  width={180}
                   alt=""
                   src={item.image}
                   onClick={() => navigate('/lists/' + item.id)}
                 />
               }
             >
-              <List.Item.Meta title={item.name} description={item.price} />
+              <List.Item.Meta
+                title={item.name}
+                description={item.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
+              />
 
-              <Text>฿{item.price}</Text>
-              <Paragraph>
-                <ul>
-                  <li>
-                    <Text strong>CPU: </Text>
-                    {item.CPU}
-                  </li>
-                  <li>
-                    <Text strong>Graphics: </Text>
-                    {item.graphics}
-                  </li>
-                  <li>
-                    <Text strong>RAM: </Text>
-                    {item.RAM}
-                  </li>
-                  <li>
-                    <Text strong>SSD: </Text>
-                    {item.SSD}
-                  </li>
-                </ul>
-              </Paragraph>
+              <Text>{item.detail}</Text>
             </List.Item>
           )}
         />
@@ -125,7 +125,7 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(
-    { fetchData, SubmitAction, fetchCartData, SubmitUpdateAction },
+    { fetchData, SubmitAction, fetchCartData, SubmitUpdateAction, SubmitRemoveAction },
     dispatch
   )
 }

@@ -3,6 +3,7 @@ export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS'
 export const FETCH_DATA_ERROR = 'ERROR'
 export const SUBMIT = 'SUBMIT'
 export const SUBMIT_UPDATE = 'SUBMIT_UPDATE'
+export const SUBMIT_REMOVE = 'SUBMIT_REMOVE'
 
 export const fetchDataBegin = () => {
   return {
@@ -34,6 +35,13 @@ export const SubmitAction = (data) => {
 export const SubmitUpdateAction = (data) => {
   return {
     type: SUBMIT_UPDATE,
+    payLoad: data
+  }
+}
+
+export const SubmitRemoveAction = (data) => {
+  return {
+    type: SUBMIT_REMOVE,
     payLoad: data
   }
 }

@@ -1,4 +1,3 @@
-import { data } from '../data'
 import axios from 'axios'
 export const FETCH_NOTEBOOKLIST = 'FETCH_NOTEBOOKLIST'
 export const FETCH_DATA_LIST_SUCCESS = 'FETCH_DATA_LIST_SUCCESS'

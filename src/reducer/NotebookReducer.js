@@ -6,7 +6,8 @@ import {
   fetchDataSuccess,
   fetchDataError,
   SUBMIT,
-  SUBMIT_UPDATE
+  SUBMIT_UPDATE,
+  SUBMIT_REMOVE
 } from '../actions/NotebookActions'
 import axios from 'axios'
 
@@ -70,6 +71,17 @@ export const notebookReducer = (state = initialState, action) => {
     case SUBMIT_UPDATE:
       axios
         .put('http://localhost:3030/carts/' + action.payLoad.id, action.payLoad)
+        .then(function (response) {
+          console.log(response)
+        })
+        .catch(function (error) {
+          console.log(error)
+        })
+      return state
+
+    case SUBMIT_REMOVE:
+      axios
+        .delete('http://localhost:3030/carts/' + action.payLoad.id, action.payLoad)
         .then(function (response) {
           console.log(response)
         })

@@ -91,7 +91,7 @@ const NotebookLists = (props) => {
           </Col>
           <Select
             defaultValue="Sort"
-            onChange={handleChange}
+            onChange={() => handleChange}
             style={{ width: '7rem', marginLeft: '5px' }}
           >
             <Option value="byName">Name</Option>

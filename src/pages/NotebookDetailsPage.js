@@ -8,7 +8,7 @@ import { SubmitAction, SubmitUpdateAction } from '../actions/NotebookActions'
 import { fetchCartData } from '../actions/CartAction'
 
 const NotebookDetailPage = (props) => {
-  const { fetchData, SubmitAction, fetchCartData, SubmitUpdateAction } = props
+  const { fetchData, SubmitAction, fetchCartData, SubmitUpdateAction, loading } = props
   const { loadingDetail, data } = props.data
   const { id } = useParams()
   const { Title, Text, Paragraph } = Typography
@@ -64,12 +64,16 @@ const NotebookDetailPage = (props) => {
 
   const Submit = () => {
     const numId = cartData.length + 1
+    var arr = []
 
     if (cartData.length > 0) {
       for (var item of cartData) {
-        if (item.product_id === id) {
-          item.quantity = item.quantity + number
-          SubmitUpdateAction(item)
+        arr.push(...item.product_id)
+        if (arr.includes(id)) {
+          if (item.product_id === id) {
+            item.quantity = item.quantity + number
+            SubmitUpdateAction(item)
+          }
         } else {
           const data = {
             id: numId.toString(),
@@ -87,10 +91,18 @@ const NotebookDetailPage = (props) => {
       }
       SubmitAction(data)
     }
+
+    refreshPage()
+  }
+
+  const refreshPage = () => {
+    if (!window.location.hash) {
+      window.location.reload()
+    }
   }
 
   return (
-    <Spin spinning={loadingDetail}>
+    <Spin spinning={loading}>
       <Layout style={{ height: '100%' }}>
         <Row justify="center">
           <Col
@@ -152,7 +164,7 @@ const NotebookDetailPage = (props) => {
               <Text type="secondary">{stock} Stock</Text>
             </Space>
 
-            <Button type="primary" block style={{ marginTop: '1rem' }} onClick={Submit}>
+            <Button type="primary" block style={{ marginTop: '1rem' }} onClick={() => Submit()}>
               ADD TO CART
             </Button>
           </Col>
@@ -166,7 +178,7 @@ const mapStateToProps = (state) => {
   return {
     data: state.data,
     cartData: state.cartPage,
-    loadingDetail: state.detailState.cartPage
+    loading: state.detailState.loading
   }
 }
 const mapDispatchToProps = (dispatch) => {
