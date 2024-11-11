@@ -91,14 +91,6 @@ const NotebookDetailPage = (props) => {
       }
       SubmitAction(data)
     }
-
-    refreshPage()
-  }
-
-  const refreshPage = () => {
-    if (!window.location.hash) {
-      window.location.reload()
-    }
   }
 
   return (

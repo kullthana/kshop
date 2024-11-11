@@ -25,14 +25,6 @@ const NavBar = (props) => {
 
   useEffect(() => {
     fetchCartData()
-    setTimeout(() => {
-      if (cartData.length > 0) {
-        setShow(true)
-      }
-    }, 1000)
-  }, [])
-
-  useEffect(() => {
     if (cartData.length > 0) {
       setShow(true)
     }

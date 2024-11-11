@@ -13,7 +13,7 @@ const CartPage = (props) => {
   const { cartData } = props.cartData
   const { Text } = Typography
   const [cartLists, SetCartLists] = useState()
-  const [product, SetProduct] = useState()
+  const [product, SetProduct] = useState(false)
   const dataCart = []
 
   const navigate = useNavigate()
@@ -22,6 +22,10 @@ const CartPage = (props) => {
     fetchData()
     fetchCartData()
     cartListData()
+
+    if (cartData.length > 0) {
+      SetProduct(true)
+    }
   }, [])
 
   const onChangeNumber = (item) => (value) => {
@@ -111,9 +115,11 @@ const CartPage = (props) => {
           )}
         />
 
-        <Button type="primary" style={{ marginTop: '1rem', width: '5rem', alignSelf: 'center' }}>
-          Checkout
-        </Button>
+        {product && (
+          <Button type="primary" style={{ marginTop: '1rem', width: '5rem', alignSelf: 'center' }}>
+            Checkout
+          </Button>
+        )}
       </Layout>
     </Spin>
   )
